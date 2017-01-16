@@ -25,8 +25,11 @@ install() {
 # of available packages, where PLATFORM is `osx` or `win`
 
 
-if [ -e $dir ]; then
+echo "Check install"
+if [ -e /Applications ]; then
+  echo "/Applications exists"
   installed_version=`plutil -extract CFBundleVersion xml1 /Application/Unity/Unity.app/Contents/Info.plist -o -|plutil -p -`
+  echo $installed_version
   if [ "$installed_version" = "\"$VERSION\"" ]; then
     exit 0
   fi
