@@ -3,6 +3,10 @@ osx_image: xcode61
 rvm:
 - 2.4.0
 env:
+  global:
+    - UNITY_VERSION=5.5.0p4
+    - UNITY_HASH=2f9c3a0f4141
+  matrix:
   - PLATFORM=android
   - PLATFORM=ios
 before_install:
@@ -11,6 +15,7 @@ before_install:
 install:
 - ./Scripts/install.sh
 script:
+- cp ./Scripts/BatchBuild.cs ./Assets/Editor/BatchBuild.cs
 - ./Scripts/build.sh
 cache:
   directories:
