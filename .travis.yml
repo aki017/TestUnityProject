@@ -14,4 +14,4 @@ script:
 - ./Scripts/build.sh
 cache:
   directories:
-    - /Applications/Unity/Unity.app
+    - /Applications/Unity
