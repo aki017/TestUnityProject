@@ -1,6 +1,7 @@
 #! /bin/sh
 
-BASE_URL=http://netstorage.unity3d.com/unity
+#BASE_URL=http://netstorage.unity3d.com/unity
+BASE_URL=http://beta.unity3d.com/download
 HASH=2f9c3a0f4141
 VERSION=5.5.0p4
 
