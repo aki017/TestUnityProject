@@ -26,7 +26,7 @@ install() {
 
 
 echo "Check install"
-if [ -e /Applications ]; then
+if [ -e /Applications/Unity ]; then
   echo "/Applications exists"
   installed_version=`plutil -extract CFBundleVersion xml1 /Applications/Unity/Unity.app/Contents/Info.plist -o -|plutil -p -`
   echo $installed_version
