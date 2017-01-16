@@ -24,6 +24,14 @@ install() {
 # See $BASE_URL/$HASH/unity-$VERSION-$PLATFORM.ini for complete list
 # of available packages, where PLATFORM is `osx` or `win`
 
+
+if [ -e $dir ]; then
+  installed_version=`plutil -extract CFBundleVersion xml1 /Application/Unity/Unity.app/Contents/Info.plist -o -|plutil -p -`
+  if [ "$installed_version" = "\"$VERSION\""]; then
+    exit 0
+  fi
+fi
+
 install "MacEditorInstaller/Unity-$VERSION.pkg"
 install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
 install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg"
