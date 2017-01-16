@@ -27,7 +27,7 @@ install() {
 
 if [ -e $dir ]; then
   installed_version=`plutil -extract CFBundleVersion xml1 /Application/Unity/Unity.app/Contents/Info.plist -o -|plutil -p -`
-  if [ "$installed_version" = "\"$VERSION\""]; then
+  if [ "$installed_version" = "\"$VERSION\"" ]; then
     exit 0
   fi
 fi
