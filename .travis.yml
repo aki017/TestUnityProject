@@ -15,6 +15,7 @@ before_install:
 install:
 - ./Scripts/install.sh
 script:
+- mkdir -p ./Assets/Editor
 - cp ./Scripts/BatchBuild.cs ./Assets/Editor/BatchBuild.cs
 - ./Scripts/build.sh
 cache:

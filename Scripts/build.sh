@@ -10,7 +10,8 @@ if [ "$PLATFORM" = "android" ]; then
     -silent-crashes \
     -logFile $(pwd)/unity.log \
     -projectPath $(pwd) \
-    -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
+    -buildTarget $PLATFORM
+    -executeMethod BatchBuild.GenerateProject
     -quit
 fi
 
@@ -22,7 +23,8 @@ if [ "$PLATFORM" = "ios" ]; then
     -silent-crashes \
     -logFile $(pwd)/unity.log \
     -projectPath $(pwd) \
-    -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
+    -buildTarget $PLATFORM
+    -executeMethod BatchBuild.GenerateProject
     -quit
 fi
 echo 'Logs from build'
